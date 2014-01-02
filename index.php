@@ -2,9 +2,12 @@
 <html>
 	<head>
 		<title>ImDevinC</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
 		<?php
 			require 'functions.php';
 		?>
+		
 		<link href='http://fonts.googleapis.com/css?family=Kavoon' rel='stylesheet' type='text/css'>
 		<link href='./css/font-awesome.min.css' rel='stylesheet' type='text/css'>
 		<link href='./css/looper.css' rel='stylesheet' type='text/css'>
