@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Flat Website Template</title>
+		<title>ImDevinC</title>
 		<?php
 			require 'functions.php';
 		?>
