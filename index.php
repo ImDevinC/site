@@ -14,6 +14,7 @@
 		<link href='./css/style.css' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
+		<?php include_once("analyticstracking.php") ?>
 		<div id="header-wrapper">
 			<div id="header" class="container">
 				<div id="logo">
