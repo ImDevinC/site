@@ -204,10 +204,19 @@ h1, h2, h3 {
 	opacity: 0.9;
 }
 
+.box-style a {
+	color: #000000;
+}
 
 .box-style img {
 	width: 140px;
 }
+
+.box-style ul {
+	list-style-type: none;
+}
+
+/** Page Content **/
 
 /** Third Section **/
 #banner-wrapper {
@@ -294,7 +303,7 @@ h1, h2, h3 {
 .looper {
 	background: #00D9A9;
 	border-radius: 5px;
-	color: #FFFFFF;
+	color: #000000;
 	font-family: 'Archivo Narrow', sans-serif;
 	margin: auto;
 	text-transform: uppercase;
@@ -319,7 +328,7 @@ h1, h2, h3 {
 }
 
 .looper a {
-	color: #FFFFFF;
+	color: #000000;
 	text-decoration: none;
 }
 
@@ -332,6 +341,10 @@ h1, h2, h3 {
 }
 
 @media (max-width: 600px) {
+	#logo i.fa {
+		display: none;
+	}
+
 	.looper {
 		width: 90%;
 	}

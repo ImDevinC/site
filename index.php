@@ -43,22 +43,42 @@
 					<div class="box-style">
 						<a href="https://play.google.com/store/apps/details?id=com.layer8apps" target="_blank" alt="MyTLC Sync for Android"><img src="images/androidmytlc.png" alt="AndroidMyTLC Sync" /></a>
 						<h3>MyTLC Sync for Android</h3>
-						<p>Duis non imperdiet nisl, non lobortis ligula. Mauris ut ultricies purus. Morbi semper.</p>
+						<p>An Android application designed to download an employees schedule from a website and import the schedule into their calendar on their device.</p>
+						<ul>
+							<li><i class="fa fa-check-circle-o"> </i> Allows for secure storage of logon credentials</li>
+							<li><i class="fa fa-check-circle-o"> </i> Users can set sync times to automatically download schedule</li>
+							<li><i class="fa fa-check-circle-o"> </i> Has multiple theme options</li>
+							<li><i class="fa fa-check-circle-o"> </i> Customizable alarm settings for events</li>
+						</ul>
 					</div>
 					<div class="box-style">
 						<a href="#" alt="MyTLC Sync for iOS"><img src="images/iosmytlc.png" alt="MyTLC Sync for iOS" /></a>
 						<h3>MyTLC Sync for iOS</h3>
-						<p>Duis non imperdiet nisl, non lobortis ligula. Mauris ut ultricies purus. Morbi semper.</p>
+						<p>An iOS application designed to download an employees schedule from a website and import the schedule into their calendar on their device.</p>
+						<ul>
+							<li><i class="fa fa-check-circle-o"> </i> Allows for secure storage of logon credentials</li>
+							<li><i class="fa fa-check-circle-o"> </i> Has multiple theme options</li>
+							<li><i class="fa fa-check-circle-o"> </i> Customizable alarm settings for events</li>
+						</ul>
 					</div>
 					<div class="box-style">
 						<a href="http://www.imdevinc.com/pokemon" target="_blank" alt="Pokemon Battle Scene Creator"><img src="images/pokemon.png" alt="Pokemon Battle Scene Creator" /></a>
 						<h3>Pokemon Battle Scene Creator</h3>
-						<p>Duis non imperdiet nisl, non lobortis ligula. Mauris ut ultricies purus. Morbi semper.</p>
+						<p>A website designed for a recurring situation on <a href="http://www.reddit.com/r/pokemon" target="_blank" alt="/r/pokemon">/r/pokemon</a> where users want to make battle scenes.</p>
+						<ul>
+							<li><i class="fa fa-check-circle-o"> </i> Allows for complete randomization of all values</li>
+							<li><i class="fa fa-check-circle-o"> </i> Optimized for mobile display</li>
+							<li><i class="fa fa-check-circle-o"> </i> Saves image directly to computer for easy use</li>
+						</ul>
 					</div>
 					<div class="box-style">
 						<a href="http://www.imdevinc.com/hangry" target="_blank" alt="Hangry"><img src="images/hangry.png" alt="Hangry" /></a>
 						<h3>Hangry</h3>
-						<p>Duis non imperdiet nisl, non lobortis ligula. Mauris ut ultricies purus. Morbi semper.</p>
+						<p>A web application to help you find a place to eat!</p>
+						<ul>
+							<li><i class="fa fa-check-circle-o"> </i> Uses geolocation or allows for manual location entry</li>
+							<li><i class="fa fa-check-circle-o"> </i> Optimized for mobile display</li>
+						</ul>
 					</div>
 				</div>
 			</div>
