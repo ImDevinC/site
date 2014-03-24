@@ -190,6 +190,7 @@ h1, h2, h3 {
 	overflow: hidden;
 	padding: 30px 10px;	
 	vertical-align: top;
+	width: 45%;
 }
 
 .box-style img {
@@ -340,7 +341,11 @@ h1, h2, h3 {
 	float: right;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+	.box-style {
+		width: 100%;
+	}
+
 	#logo i.fa {
 		display: none;
 	}
