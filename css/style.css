@@ -217,6 +217,10 @@ h1, h2, h3 {
 	list-style-type: none;
 }
 
+.box-style .content {
+	margin-left: 140px;
+}
+
 /** Page Content **/
 
 /** Third Section **/
