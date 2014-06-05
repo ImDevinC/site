@@ -1,13 +1,14 @@
 <?php
-
 	require_once("php_fast_cache.php");
 
 	$cache = new phpFastCache();
 
 	$eventCount = 6;
 
-	if ($_GET["type"] == "events") {
+	if (isset($_GET["type"]) && $_GET["type"] == "events") {
 		echo loadGithubEvents();
+	} else {
+		return null;
 	}
 
 	function deleteCache($key = null) {
@@ -28,7 +29,7 @@
 
 			curl_setopt($ch, CURLOPT_USERAGENT, 'ImDevinC');
 
-			curl_setopt($ch, CURLOPT_HTTPHEADER, array('Authorization: token f2f4daf1cd4465016d78e8ab923163987935e893'));
+			curl_setopt($ch, CURLOPT_HTTPHEADER, array('f2f4daf1cd4465016d78e8ab923163987935e893:x-oauth'));
 
 			$result = json_decode(curl_exec($ch), true);
 
@@ -46,7 +47,7 @@
 		$events = getGithubData('https://api.github.com/users/ImDevinC/events/public', 'github_events');
 
 		if ($events == null) {
-			return '<div class="alert alert-danger">There was an issue loading Github repos for ImDevinC.  Please try again later or visit <a href="http://www.github.com/ImDevinC" target="_blank">Github</a>.</div>';
+			return '<div class="item"><div class="alert alert-danger">There was an issue loading Github repos for ImDevinC.  Please try again later or visit <a href="http://www.github.com/ImDevinC" target="_blank">Github</a>.</div></div>';
 		}
 
 		$list = '';

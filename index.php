@@ -30,9 +30,9 @@
 				<header>Stuff I've done recently</header>
 				<div id="looper" data-looper="go" class="looper slide">
 					<div class="looper-inner">
-						<?php
-							echo loadGithubEvents();
-						?>
+						<div class="item">
+							<div class="description">Loading Github events...</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -124,9 +124,6 @@
 		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 		<script src="./js/humane.js"></script>
 		<script src="./js/looper.js"></script>
-		<script type="text/javascript">
-			$('time').humaneDates();
-			$('.looper').looper();
-		</script>
+		<script src="./js/script.js"></script>
 	</body>
 </html>
