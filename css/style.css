@@ -222,6 +222,11 @@ h1, h2, h3 {
 }
 
 /** Page Content **/
+.coming-soon {
+	color: #FF0000;
+	font-size: .8em;
+	font-style: italic;
+}
 
 /** Third Section **/
 #banner-wrapper {
