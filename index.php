@@ -129,6 +129,7 @@
 					<li><a href="http://www.github.com/ImDevinC" alt="/ImDevinC" target="_blank"><i class="fa fa-github"> </i></a></li>
 					<li><a href="https://plus.google.com/+DevinCollins" alt="+ImDevinC" target="_blank"><i class="fa fa-google-plus-square"> </i></a></li>
 					<li><a href="http://www.linkedin.com/in/imdevinc/" alt="In/ImDevinC" target="_blank"><i class="fa fa-linkedin"> </i></a></li>
+					<li><a href="http://pgp.mit.edu/pks/lookup?op=get&search=0x43BF0B591C48C523" alt="PGP Key" target="_blank"><i class="fa fa-lock"> </i></a></li>
 				</ul>
 			</div>
 		</div>
