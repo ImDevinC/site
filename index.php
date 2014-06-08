@@ -58,10 +58,10 @@
 					</div>
 					<div class="box-style">
 						<div class="image">
-							<a href="#" alt="MyTLC Sync for iOS"><img src="images/iosmytlc.png" alt="MyTLC Sync for iOS" /></a>
+							<img src="images/iosmytlc.png" alt="MyTLC Sync for iOS" />
 						</div>
 						<div class="content">
-							<h3>MyTLC Sync for iOS</h3>
+							<h3>MyTLC Sync for iOS <span class="coming-soon">(Coming Soon)</span></h3>
 							<p>An iOS application designed to download an employees schedule from a website and import the schedule into their calendar on their device.</p>
 							<ul>
 								<li><i class="fa fa-check-circle-o"> </i> Allows for secure storage of logon credentials</li>
