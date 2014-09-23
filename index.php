@@ -43,10 +43,10 @@
 					<header>Projects</header>
 					<div class="box-style">
 						<div class="image">
-							<a href="https://play.google.com/store/apps/details?id=com.layer8apps" target="_blank" alt="MyTLC Sync for Android"><img src="images/androidmytlc.png" alt="AndroidMyTLC Sync" /></a>
+							<a href="https://github.com/ImDevinC/AndroidMyTLCSync" target="_blank" alt="MyTLC Sync for Android"><img src="images/androidmytlc.png" alt="AndroidMyTLC Sync" /></a>
 						</div>
 						<div class="content">
-							<h3>MyTLC Sync for Android</h3>
+							<h3>MyTLC Sync for Android <span class="coming-soon">(Decommissioned)</span></h3>
 							<p>An Android application designed to download an employees schedule from a website and import the schedule into their calendar on their device.</p>
 							<ul>
 								<li><i class="fa fa-check-circle-o"> </i> Allows for secure storage of logon credentials</li>
@@ -58,10 +58,10 @@
 					</div>
 					<div class="box-style">
 						<div class="image">
-							<img src="images/iosmytlc.png" alt="MyTLC Sync for iOS" />
+							<a href="https://github.com/ImDevinC/iOSMyTLCSyncv2" target="_blank" alt="MyTLC Sync for iOS"><img src="images/iosmytlc.png" alt="MyTLC Sync for iOS" /></a>
 						</div>
 						<div class="content">
-							<h3>MyTLC Sync for iOS <span class="coming-soon">(Coming Soon)</span></h3>
+							<h3>MyTLC Sync for iOS <span class="coming-soon">(Decommissioned)</span></h3>
 							<p>An iOS application designed to download an employees schedule from a website and import the schedule into their calendar on their device.</p>
 							<ul>
 								<li><i class="fa fa-check-circle-o"> </i> Allows for secure storage of logon credentials</li>
