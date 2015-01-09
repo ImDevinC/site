@@ -72,7 +72,7 @@
 					</div>
 					<div class="box-style">
 						<div class="image">
-							<a href="http://www.imdevinc.com/pokemon" target="_blank" alt="Pokemon Battle Scene Creator"><img src="images/pokemon.png" alt="Pokemon Battle Scene Creator" /></a>
+							<a href="http://pbsc.imdevinc.com" target="_blank" alt="Pokemon Battle Scene Creator"><img src="images/pokemon.png" alt="Pokemon Battle Scene Creator" /></a>
 						</div>
 							<div class="content">
 							<h3>Pokemon Battle Scene Creator</h3>
@@ -86,7 +86,7 @@
 					</div>
 					<div class="box-style">
 						<div class="image">
-							<a href="http://www.imdevinc.com/hangry" target="_blank" alt="Hangry"><img src="images/hangry.png" alt="Hangry" /></a>
+							<a href="http://hangry.imdevinc.com" target="_blank" alt="Hangry"><img src="images/hangry.png" alt="Hangry" /></a>
 						</div>
 						<div class="content">
 							<h3>Hangry</h3>
