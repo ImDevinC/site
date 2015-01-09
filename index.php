@@ -134,7 +134,7 @@
 			</div>
 		</div>
 		<div id="copyright" class="container">
-			<p>Copyright (c) 2014</p>
+			<p>Copyright (c) 2015</p>
 		</div>
 		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 		<script src="./js/humane.js"></script>
