@@ -22,7 +22,5 @@ $(document).ready(function(){
 			console.log('remoe it');
 			$looper.off();
 		}
-
-		console.log('test');
 	});
 });
