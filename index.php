@@ -30,8 +30,9 @@
 				<header>Stuff I've done recently</header>
 				<div id="looper" data-looper="go" class="looper slide">
 					<div class="looper-inner">
-						<div class="item">
+						<div class="item loading-placeholder">
 							<div class="description">Loading Github events...</div>
+							<div class="time">This should only take a moment</div>
 						</div>
 					</div>
 				</div>
