@@ -19,7 +19,6 @@ $(document).ready(function(){
 		
 		if (!$item.hasClass('loading-placeholder')) {
 			$looper.find('.loading-placeholder').remove();
-			console.log('remoe it');
 			$looper.off();
 		}
 	});
