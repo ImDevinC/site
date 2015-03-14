@@ -329,6 +329,7 @@ h1, h2, h3 {
 	font-weight: 600;
 	letter-spacing: 2px;	
 	overflow: hidden;
+	white-space: nowrap;
 }
 
 .looper .item > .time {
