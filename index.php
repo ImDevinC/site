@@ -8,7 +8,7 @@
 			require 'functions.php';
 		?>
 		
-		<link href='http://fonts.googleapis.com/css?family=Kavoon' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Kavoon' rel='stylesheet' type='text/css'>
 		<link href='./css/font-awesome.min.css' rel='stylesheet' type='text/css'>
 		<link href='./css/looper.css' rel='stylesheet' type='text/css'>
 		<link href='./css/style.css' rel='stylesheet' type='text/css'>
@@ -137,7 +137,7 @@
 		<div id="copyright" class="container">
 			<p>Copyright (c) 2015</p>
 		</div>
-		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+		<script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
 		<script src="./js/humane.js"></script>
 		<script src="./js/looper.js"></script>
 		<script src="./js/script.js"></script>
