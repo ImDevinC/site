@@ -100,11 +100,11 @@
 					</div>
 					<div class="box-style">
 						<div class="image">
-							<a href="https://play.google.com/store/apps/details?id=com.layer8apps.stopwatch.main" target="_blank" alt="Bigtimer"><img src="images/bigtimer.webp" alt="Bigtimer for Android" /></a>
+							<a href="https://play.google.com/store/apps/details?id=com.layer8apps.stopwatch.main" target="_blank" alt="Bigtimer"><img src="images/bigtimer.png" alt="Bigtimer for Android" /></a>
 						</div>
 						<div class="content">
 							<h3>Bigtimer</h3>
-							<p>An easy to use stopwatch requested by a Reddit user. <a href="https://www.google.com/url?q=http://bit.ly/1pMp7FS&sa=D&usg=AFQjCNHBtFvSpermOZ4xqI4wS0zw_d0AzQ">Link to request</a></p>
+							<p>An easy to use stopwatch requested by a Reddit user. <a href="https://www.reddit.com/r/SomebodyMakeThis/comments/24338z/smt_a_fully_featured_stopwatch_app_that_has_big/">Link to request</a></p>
 							<ul>
 								<li><i class="fa fa-check-circle-o"> </i> Simple interface</li>
 								<li><i class="fa fa-check-circle-o"> </i> Large buttons for easy use</li>
