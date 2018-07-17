@@ -1,0 +1,6 @@
+{
+  "name": "site",
+  "short_name": "site",
+  "start_url": "/",
+  "display": "standalone"
+}
