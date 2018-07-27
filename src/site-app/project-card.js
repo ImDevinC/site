@@ -2,6 +2,7 @@ import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import '@polymer/paper-card/paper-card.js'
 import '@polymer/paper-button/paper-button.js'
 import './shared-styles.js'
+import 'fontawesome-icon'
 
 /**
  * @customElement
@@ -13,19 +14,34 @@ class ProjectCard extends PolymerElement {
             <style include="shared-styles">
                 paper-card {
                     max-width: 250px;
+                    margin: 15px;
+                }
+
+                .project-header {
+                    font-weight: bold;
+                }
+
+                paper-button {
+                    color: var(--primary-dark-color);
+                }
+
+                fontawesome-icon {
+                    display: inline-block;
                 }
             </style>
             <paper-card>
                 <div class="card-content">
-                    <div class="project-header">[[title]]</div>
+                    <div class="project-header">
+                        <fontawesome-icon prefix="[[iconPrefix]]" name="[[icon]]"></fontawesome-icon>
+                        [[title]]
+                    </div>
                     <p class="project-description">[[description]]</p>
                 </div>
                 <div class="card-actions">
-                    <div class="horizontal">
-                    <a href="[[link]]">
-                        <paper-button class="project-github">[[linkTitle]]</paper-button>
-                    </a>
-                    
+                    <div>
+                        <a href="[[link]]">
+                            <paper-button>[[linkTitle]]</paper-button>
+                        </a>
                     </div>
                 </div>
             </paper-card>
@@ -37,7 +53,9 @@ class ProjectCard extends PolymerElement {
             title: String,
             description: String,
             link: String,
-            linkTitle: String
+            linkTitle: String,
+            icon: String,
+            iconPrefix: String
         }
     }
 
@@ -47,6 +65,8 @@ class ProjectCard extends PolymerElement {
         this.description = '';
         this.link = '';
         this.linkTitle = '';
+        this.icon = '';
+        this.iconPrefix = 'fab';
     }
 }
 
