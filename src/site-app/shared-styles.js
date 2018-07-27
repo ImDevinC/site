@@ -32,7 +32,6 @@ $_documentContainer.innerHTML = `<dom-module id="shared-styles">
         --bg-color: #FAFAFA;
 
         font-family: 'Roboto', sans-serif;
-        font-size: 1.5em;
       }
     </style>
   </template>

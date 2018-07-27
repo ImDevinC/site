@@ -2,8 +2,10 @@
   "name": "site",
   "dependencies": {
     "@polymer/app-layout": "^3.0.0-pre.21",
+    "@polymer/iron-flex-layout": "^3.0.0-pre.21",
     "@polymer/iron-image": "^3.0.0-pre.21",
-    "@polymer/paper-icon-button": "^3.0.0-pre.21",
+    "@polymer/paper-button": "^3.0.0-pre.21",
+    "@polymer/paper-card": "^3.0.0-pre.21",
     "@polymer/polymer": "^3.0.0"
   },
   "devDependencies": {
