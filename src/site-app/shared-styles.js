@@ -28,8 +28,11 @@ $_documentContainer.innerHTML = `<dom-module id="shared-styles">
         --header-expanded-bg-color: #FFF;
         --header-expanded-text-color: #000;
 
+        /* Body Styling */
+        --bg-color: #FAFAFA;
+
         font-family: 'Roboto', sans-serif;
-        font-size: 2em;
+        font-size: 1.5em;
       }
     </style>
   </template>
