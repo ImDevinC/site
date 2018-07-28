@@ -1,4 +1,19 @@
 {
+  "entrypoint": "index.html",
+  "shell": "src/site-app.js",
+  "src": [
+    "src/*"
+  ],
+  "extraDependencies": [
+    "manifest.json",
+    "node_modules/@webcomponents/webcomponentsjs/bundles/**",
+    "images/*"
+  ],
+  "builds": [
+    {
+      "preset": "es6-bundled"
+    }
+  ],
   "npm": true,
   "lint": {
     "rules": [
