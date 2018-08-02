@@ -124,7 +124,7 @@ class SiteApp extends PolymerElement {
           <social-media url="https://github.com/imdevinc" icon="github"></social-media>
           <social-media url="https://twitter.com/imdevinc" icon="twitter"></social-media>
           <social-media url="https://linkedin.com/in/imdevinc" icon="linkedin"></social-media>
-          <social-media url="http://pgp.mit.edu/pks/lookup?op=get&search=0x43BF0B591C48C523" icon="lock" prefix="fas"></social-media>
+          <social-media url="http://pgp.mit.edu/pks/lookup?op=get&search=0x053345D4AFA08CBB" icon="lock" prefix="fas"></social-media>
         </footer>
       </app-header-layout>
     `;
