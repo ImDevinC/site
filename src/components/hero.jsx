@@ -5,8 +5,12 @@ export default class Hero extends Component {
     render() {
         return (
             <section className="home-slider owl-carousel js-fullheight">
-                <SliderItem title="Hello! I'm" description="Devin Collins" />
-                <SliderItem title="I'm from the US" description="An SRE" />
+                {
+                    Object.keys(this.props.items).map((k) => {
+                        const item = this.props.items[k]
+                        return <SliderItem key={k} title={item.title} description={item.description} />
+                    })
+                }
             </section>
         )
     }

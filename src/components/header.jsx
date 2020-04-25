@@ -8,7 +8,7 @@ export default class Header extends Component {
                     <div className="row">
                         <div className="col-md-12">
                             <div className="colorlib-navbar-brand">
-                                <a className="colorlib-logo" href="index.html"><span className="logo-img"
+                                <a className="colorlib-logo" href="#"><span className="logo-img"
                                     style={{ backgroundImage: "url(images/" + this.props.image + ")" }}></span>{this.props.title}</a>
                             </div>
                         </div>

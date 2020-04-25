@@ -14,25 +14,10 @@ export default class Services extends Component {
                     </div>
                     <div className="row">
                         {
-                            Object.keys(this.props.services).map((k) => {
-                                return <ServiceItem icon={k} lines={this.props.services[k]} />
+                            Object.keys(this.props.services).map((k, i) => {
+                                return <ServiceItem key={i} icon={k} lines={this.props.services[k]} />
                             })
                         }
-                        {/* <ServiceItem
-                            icon="layers"
-                            first="UI/UX Design"
-                            second="Mobile App Design"
-                            third="Responsive Design" />
-                        <ServiceItem
-                            icon="gears"
-                            first="Product Strategy"
-                            second="Design Sprints"
-                            third="UX Strategy" />
-                        <ServiceItem
-                            icon="code"
-                            first="HTML/CSS"
-                            second="Prototyping"
-                            third="User Testing" /> */}
                     </div>
                 </div>
             </section>
