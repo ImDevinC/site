@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import './App.css';
-import About from './components/about'
+import ProgressBar from './components/progressBar'
+import Page from './components/page'
 
 class App extends Component {
   render() {
     return (
-      <div id="colorlib-page" >
-        <div id="container-wrap">
-          <div id="colorlib-main">
-            <About />
-          </div>
+      <div>
+        <ProgressBar />
+        <div className="page">
+          <Page />
         </div>
       </div>
     );
