@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import SocialMediaLink from './socialMediaLink'
 
 export default class Footer extends Component {
     render() {
@@ -9,9 +10,9 @@ export default class Footer extends Component {
                         <div className="col-md-5 text-center">
                             <div className="ftco-footer-widget mb-5">
                                 <ul className="ftco-footer-social list-unstyled">
-                                    <li className="ftco-animate"><a href={"https://www.twitter.com/" + this.props.twitter} alt="Twitter" target="_blank" rel="noopener noreferrer"><span className="icon-twitter"></span></a></li>
-                                    <li className="ftco-animate"><a href={"https://www.instagram.com/" + this.props.instagram} alt="Instagram" target="_blank" rel="noopener noreferrer"><span className="icon-instagram"></span></a></li>
-                                    <li className="ftco-animate"><a href={"https://www.linkedin.com/in/" + this.props.linkedin} alt="Facebook" target="_blank" rel="noopener noreferrer"><span className="icon-linkedin"></span></a></li>
+                                    <li className="ftco-animate"><SocialMediaLink username={this.props.twitter} site="twitter" /></li>
+                                    <li className="ftco-animate"><SocialMediaLink username={this.props.instagram} site="instagram" /></li>
+                                    <li className="ftco-animate"><SocialMediaLink username={this.props.linkedin} site="linkedin" /></li>
                                 </ul>
                             </div>
                             <div className="ftco-footer-widget">

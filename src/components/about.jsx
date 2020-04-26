@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import SocialMediaLink from './socialMediaLink'
 
 export default class About extends Component {
     render() {
@@ -17,9 +18,9 @@ export default class About extends Component {
                                     <p>{this.props.description}</p>
                                     <p><a href={this.props.resume_url}>Checkout my resume</a></p>
                                     <ul className="ftco-footer-social list-unstyled mt-4">
-                                        <li><a href={"https://www.twitter.com/" + this.props.twitter} alt="Twitter" target="_blank" rel="noopener noreferrer"><span className="icon-twitter"></span></a></li>
-                                        <li><a href={"https://www.instagram.com/" + this.props.instagram} alt="Instagram" target="_blank" rel="noopener noreferrer"><span className="icon-instagram"></span></a></li>
-                                        <li><a href={"https://www.linkedin.com/in/" + this.props.linkedin} alt="Facebook" target="_blank" rel="noopener noreferrer"><span className="icon-linkedin"></span></a></li>
+                                        <li><SocialMediaLink username={this.props.twitter} site="twitter" /></li>
+                                        <li><SocialMediaLink username={this.props.instagram} site="instagram" /></li>
+                                        <li><SocialMediaLink username={this.props.linkedin} site="linkedin" /></li>
                                     </ul>
                                     <h5>Contact me here!</h5>
                                     <p>Email: <a href={"mailto:" + this.props.email}>{this.props.email}</a></p>
