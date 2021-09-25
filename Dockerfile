@@ -21,4 +21,6 @@ RUN useradd -ms /bin/bash hugo
 
 USER hugo
 
+COPY . .
+
 RUN hugo -D
