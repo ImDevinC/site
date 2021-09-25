@@ -1,0 +1,67 @@
+baseURL: "https://imdevinc.com/"
+languageCode: "en-us"
+title: "ImDevinC"
+theme: "papermod"
+
+enableRobotsTXT: true
+buildDrafts: true
+buildFuture: false
+buildExpired: false
+
+minify:
+  disableXML: true
+  minifyOutput: true
+
+params:
+  env: productoin
+  title: "ImDevinC"
+  description: "Code, games, and more"
+  keywords: [blog, portfolio, code, kubernetes, docker]
+  author: Me
+  DateFormat: "January 2, 2006"
+  defaultTheme: dark
+  disableThemeToggle: true
+
+  ShowReadingTime: true
+  ShowShareButtons: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  disableSpecial1stPost: false
+  disableScrollToTop: false
+  comments: false
+  hidemeta: false
+  hideSummary: false
+  showToc: false
+  tocopen: false
+
+  assets:
+    disableHLJS: true
+    disableFingerprinting: true
+    favicon: ""
+    favicon16x16: ""
+    favicon32x32: ""
+    apple_touch_icon: ""
+    safari_pinned_tab: ""
+
+  profileMode:
+    enabled: false
+    title: ImDevinC
+    buttons:
+      - name: Posts
+        url: posts
+
+  homeInfoParams:
+    Title: "Hi there! \U0001F44B. I'm Devin C."
+    Content: I'm a guy (he/him) that likes to explore new technology, collect hobbies, and occasionally talk about them.
+
+  socialIcons:
+    - name: twitter
+      url: https://twitter.com/ImDevinC
+    - name: github
+      url: https://github.com/ImDevinC
+
+  cover:
+    hidden: true
+    hiddenInList: true
+    hiddenInSingle: true
