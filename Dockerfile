@@ -15,9 +15,11 @@ COPY --from=builder /tmp/hugo /usr/bin/hugo
 
 RUN chmod +x /usr/bin/hugo
 
+RUN useradd -ms /bin/bash hugo
+
 WORKDIR /usr/src/app
 
-RUN useradd -ms /bin/bash hugo
+RUN chown hugo: ./
 
 USER hugo
 
