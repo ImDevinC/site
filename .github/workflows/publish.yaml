@@ -20,8 +20,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: false
-          repository: blog-image
-          tags: ubuntu-latest
+          tags: latest
 
       - name: Extract assets
         id: extract
@@ -39,3 +38,5 @@ jobs:
           port: ${{ secrets.SERVER_PORT }}
           source: ${{ steps.extract.outputs.destination }}/.
           target: "/var/www/imdevinc.com"
+          strip_components: 1
+
