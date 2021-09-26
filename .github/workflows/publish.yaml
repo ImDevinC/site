@@ -37,5 +37,5 @@ jobs:
           username: ${{ secrets.SERVER_USERNAME }}
           key: ${{ secrets.SERVER_SSH_KEY }}
           port: ${{ secrets.SERVER_PORT }}
-          source: ${{ steps.extract.outputs.destination }}
+          source: ${{ steps.extract.outputs.destination }}/.
           target: "/var/www/imdevinc.com"
