@@ -13,7 +13,7 @@ minify:
   minifyOutput: true
 
 params:
-  env: productoin
+  env: production
   title: "ImDevinC"
   description: "Code, games, and more"
   keywords: [blog, portfolio, code, kubernetes, docker]
@@ -60,6 +60,10 @@ params:
       url: https://twitter.com/ImDevinC
     - name: github
       url: https://github.com/ImDevinC
+    - name: email
+      url: mailto:me@imdevinc.com
+    - name: ''
+      url: https://keys.openpgp.org/vks/v1/by-fingerprint/A69D9C27016EDE8E90F6B13013A7F3711AFD51AA
 
   cover:
     hidden: true
