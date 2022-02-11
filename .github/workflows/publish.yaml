@@ -5,8 +5,12 @@ on:
   push:
     branches:
     - main
-    paths-ignore:
-    - "terraform/**"
+    paths:
+    - "archetypes/**"
+    - "content/**"
+    - "themes/**"
+    - "resources/**"
+    - "config.yml"
     
 jobs:
   publish:
