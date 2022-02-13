@@ -7,4 +7,6 @@ locals {
   dns_validation_1   = "FfqM0297lqs8ZqQufWXY1PTPfumFc0IzbQepE1KNlnQ"
   dns_validation_2   = "JRolUhYqSq-WOu4N9uIin637Mub3dSfiUz9hu1tLD7M"
   keybase_validation = "keybase-site-verification=fI_s0HjMznP9oeK_le26opYH3ndOpT8LLXDX7gGvOQQ"
+
+  molly_domain = "mollycollins.me"
 }
