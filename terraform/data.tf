@@ -8,5 +8,8 @@ locals {
   dns_validation_2   = "JRolUhYqSq-WOu4N9uIin637Mub3dSfiUz9hu1tLD7M"
   keybase_validation = "keybase-site-verification=fI_s0HjMznP9oeK_le26opYH3ndOpT8LLXDX7gGvOQQ"
 
-  molly_domain = "mollycollins.me"
+  molly_domain            = "mollycollins.me"
+  molly_site_verification = "mtmCg2g38sykzwGdsIwCnjkbpL3h-dWpwR7gJQwhBOw"
+  molly_dns_validation_1 = "aKSXLqHwee4hxQNwphtJEolZ8roHvPvvV8XOPcYygVc"
+  molly_dns_validation_2 = "smDATBvrWGxMVRXjdWTdA1BI5cq89fqsMCWQJJUQMkw"
 }

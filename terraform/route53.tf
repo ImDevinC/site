@@ -66,8 +66,17 @@ module "records_molly" {
     {
       name    = "google-site-verification"
       type    = "TXT"
-      records = ["mtmCg2g38sykzwGdsIwCnjkbpL3h-dWpwR7gJQwhBOw"]
+      records = [local.molly_site_verification]
       ttl     = 3600
+    },
+    {
+      name = "_acme-challenge"
+      type = "TXT"
+      records = [
+        local.molly_dns_validation_1,
+        local.molly_dns_validation_2
+      ]
+      ttl = 3600
     },
     {
       name = ""
