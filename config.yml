@@ -3,6 +3,8 @@ languageCode: "en-us"
 title: "ImDevinC"
 theme: "papermod"
 
+googleAnalytics: UA-47032439-2
+
 enableRobotsTXT: true
 buildDrafts: false
 buildFuture: false
