@@ -11,7 +11,7 @@ Below you can find my titles and and compensation at the time (to the best of my
 
 
 ### Current
-  + Lead Software Engineer [October 2021 - Present] - $235k Base, 20% Bonus, $120k RSU
+  + Lead Software Engineer [October 2021 - Present] - $235k Base, 42k Bonus, $120k RSU
   
 ### Previous
   + Principal Site Reliability Engineer [June 2021 - October 2021] - $162k Base, 10% Bonus, ~$6k/year in stock
