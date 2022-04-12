@@ -1,7 +1,7 @@
 module "bucket" {
   source = "terraform-aws-modules/s3-bucket/aws"
   bucket = local.bucket_name
-  acl    = "private"
+  # acl    = "private"
 }
 
 data "aws_iam_policy_document" "s3_policy" {
