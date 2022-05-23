@@ -1,0 +1,34 @@
+---
+title: Making the most of a break from work
+# date: 2022-05-22T17:26:00Z+08:00
+date: 2022-05-22T18:20:00Z
+description: Taking a breather, but still getting stuff done!
+showToc: true
+draft: true
+---
+### Taking a break
+Like most adults in the world, I've been working essentially non-stop since I was a teenager. Especially in American culture, there's an ingrained idea from before we event start school that we should always be working. _"What do you want to be when you grow up?"_ is one of the first things I remember in school, although I admittedly don't remember my answer. Because of this cultural idea, I've made many sacrifices in my life in the name of a career. My wife and I have moved across the country multiple times, lived in separate states from each other, and left the majority of our friends and family behind in those states we left. I don't regret those decisions we made, because it has affored us many luxuries. We have travelled the world, own a beautiful house, and are left wanting for very little.  
+All that being said, working this hard and making those sacrifices takes it toll, especially after doing it for so long. In the fall of 2021, I was feeling burnt out and bored at my job and thought that maybe I just needed a change of pace. This led to me searching for a new job, and I quickly jumped on the first offer with the most money that was available. Unfortunately, after 6 months in this new role, I am still feeling burnt out and bored. What I've come to realize is that this isn't a fault of the job, but rather just my body saying it needs a break. Between jobs, I took a month off, but was sick for the majority of that so even then I didn't get to truly enjoy my time off.
+I had been thinking of how to take a much needed break for awhile when, in early May, my company laid off quite a few people. I was fortunate enough to be spared, but at the same time they said that anyone who didn't feel like they wanted to be there, should leave, and they would offer severence.  
+Even with only 6 months in role, even if the severance was nothing, I figured this was the sign I'd been wanting. Someone telling me to leave if I wasn't really feeling it. So that's what I did (well, am doing. I'm writing this on 5/22 and will be handing in my two week notice tomorrow, 5/23). I realize how fortunate enough I am to be in a position where I can leave my job without having a backup plan, and I also realize that being fortunate also comes from the fact that I've pushed myself so hard to get to where I am. I'm not "lucky" that I can take an extended break from work, I've worked to get myself into a situation where this is possible.  
+> I don't want to diminish my wife's impact here. She has also worked just as hard, if not harder, to get to where she is and be able to also feel comfortable enough to let me take time off work.
+
+### What to do?
+What I'm most excited for during my break is the fact that I don't have to do anything. I can wake up, decide what to do or not do that day, and do it. However I'm also someone who is paralyzed by choice and find it hard to make decisions of what to do. Being in this conundrum, I've decided to set some goals for myself during my planned two month break. Having a set of goals, and more importantly making them public, should give me some accountability to myself to actually do _something_ and not just waste two months of my life doing nothing. So below are a lits of goals I want to attain. And during the same time, I want to be able to write a blog post about each of them to share the progress. Whether or not anyone reads it is irrelevant really, but maybe it will help someone in a similar situation at some point. So without futher ado, the goals!
+
+#### Sailing
+I love sailing. I used to sail with a friend back in Minneapolis on his boat during the summers when it was warm enough. One of the reasons I wanted to move to California and be close-ish to the beach, is so I could sail on the ocean as well. So my first plan is to get out of the house, get ASA certified, and go sailing on the ocean. No crazy long sails, just day sails along the coast, maybe to Catalina, or whatever. I've actually researched this a lot in my area and I've just been making up excuses why I can't do it, which I no longer have. This will probably be the first item I try to tackle so I can make sure I'm getting out of my house as well.
+
+#### Grill Tool Housing
+Our house has an outdoor island with a grill in it that works wonderful. However one thing I dislike is that while we have storage in the island, it's just an empty box that doesn't allow for easily organizing everything. I want to build a small organization closet that can go into the island and help make storing tools more organized.
+
+#### Walking
+I don't particularly _enjoy_ walking, but I will admit, it really helps me feel better. As of now, I average probably one walk a week, with no real reason why I don't do it more. Ideally I can go for a walk every day, or close to it, and get into a recurring habit to keep it going. My dogs love walks, and they're getting older, so it will also be very helpful for them.
+
+#### FIFA Bot
+Soccer is about the only sport I watch, and I don't watch a lot of it outside of the World Cup. At my last company, I wrote a [Slack bot](https://github.com/ImDevinC/wc-watcher/) to keep us up to date on the latest World Cup action. This project served a few purposes. It was my first Slack bot, my first time reverse engineering an API, and my first time using Docker. I've learned _a ton_ since this project, and now I want to expand this project. I plan on having two parts of this new project, one is a golang libary for interacting with the FIFA API that others can use, and the other is building a Discord bot (since I won't be working, I'll have more access to Discord than Slack) to post messages. A stretch goal here would be to make the Discord bot something that anyone could install in their own Discord and subscribe to updates, not just for the World Cup, but for any team/league/etc.
+
+#### Twitch Battle
+During the pandemic, I started streaming. I've really enjoyed streaming, as it's given me a chance to set aside time for myself every week on a schedule that I can make sure I'm playing games, talking with friends, and more. I've been toying with a tool that allows viewers of my stream to interact and compete with each other, but I've been slacking on getting it done. I want to get this project deployed and start using it in my streams, even if no one ends up using it on stream.
+
+So that's my goal for the next two-ish months. And hopefully these things will help me feel more refreshed and ready to tackle the next part of my life. I'm planning on updating regularly, so be sure to check back for more information!
