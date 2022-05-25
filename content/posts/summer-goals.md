@@ -4,7 +4,7 @@ title: Making the most of a break from work
 date: 2022-05-22T18:20:00Z
 description: Taking a breather, but still getting stuff done!
 showToc: true
-draft: true
+draft: false
 ---
 ### Taking a break
 Like most adults in the world, I've been working essentially non-stop since I was a teenager. Especially in American culture, there's an ingrained idea from before we event start school that we should always be working. _"What do you want to be when you grow up?"_ is one of the first things I remember in school, although I admittedly don't remember my answer. Because of this cultural idea, I've made many sacrifices in my life in the name of a career. My wife and I have moved across the country multiple times, lived in separate states from each other, and left the majority of our friends and family behind in those states we left. I don't regret those decisions we made, because it has affored us many luxuries. We have travelled the world, own a beautiful house, and are left wanting for very little.  
