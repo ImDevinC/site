@@ -9,9 +9,11 @@ on:
     - "static/**"
     
 jobs:
-  resume:
+  publish:
+    if: ${{ always() }}
+    needs: [ resume ]
     runs-on: ubuntu-latest
-    name: Update resume
+    name: Upload to S3
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -21,20 +23,10 @@ jobs:
         with:
           push: false
           tags: latest
-          file: Dockerfile.resume
+          file: Dockerfile.resume      
       - name: Generate resume
         id: generate
         run: docker run -v $PWD/static:/usr/src/app ${{ steps.build.outputs.digest }} export resume.html --theme jsonresume-theme-rocketspacer
-
-  publish:
-    if: ${{ always() }}
-    needs: [ resume ]
-    runs-on: ubuntu-latest
-    name: Upload to S3
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-      
       - name: Upload to S3
         uses: shallwefootball/s3-upload-action@master
         with:
