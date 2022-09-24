@@ -6,11 +6,7 @@ on:
     branches:
     - main
     paths:
-    - "archetypes/**"
-    - "content/**"
-    - "themes/**"
-    - "resources/**"
-    - "config.yml"
+    - "static/**"
     
 jobs:
   publish:
@@ -22,25 +18,11 @@ jobs:
         with:
           submodules: recursive
 
-      - name: Generate assets
-        id: generate
-        uses: docker/build-push-action@v2
-        with:
-          push: false
-          tags: latest
-
-      - name: Extract assets
-        id: extract
-        uses: shrink/actions-docker-extract@v1
-        with:
-          image: ${{ steps.generate.outputs.digest }}
-          path: usr/src/app/public/.
-
       - name: Upload to S3
         uses: shallwefootball/s3-upload-action@master
         with:
           aws_key_id: ${{ secrets.AWS_KEY_ID }}
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws_bucket: imdevinc-site
-          source_dir: ${{ steps.extract.outputs.destination }}
+          source_dir: static
           destination_dir: ''
