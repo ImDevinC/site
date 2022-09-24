@@ -1,0 +1,13 @@
+FROM node:16
+
+ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
+
+ENV PATH=$PATH:/home/node/.npm-global/bin
+
+RUN npm install -g resume-cli
+
+WORKDIR /usr/src/app
+
+ENTRYPOINT ["npx", "resume"]
+
+RUN npm install jsonresume-theme-rocketspacer
