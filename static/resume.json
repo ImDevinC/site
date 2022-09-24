@@ -1,0 +1,114 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Devin Collins",
+    "label": "Site Reliability Engineer",
+    "image": "https://avatars.githubusercontent.com/u/3997333?v=4",
+    "email": "me@imdevinc.com",
+    "phone": "(614) 594-3351",
+    "url": "http://resume.imdevinc.com",
+    "summary": "I am a site reliability engineer with passion for automating processes and delivering a top notch user experience. I use my unique mix of experience ranging from customer-facing support, QA, to software engineer to build tools and processes that help drive the developer experience and improve performance of entire organizations.",
+    "location": {
+      "address": "35562 Billie Ann Rd",
+      "postalCode": "CA 92595",
+      "city": "Wildomar",
+      "countryCode": "US",
+      "region": "California"
+    },
+    "profiles": [
+      {
+        "network": "Twitter",
+        "username": "ImDevinC",
+        "url": "https://twitter.com/imdevinc"
+      },
+      {
+        "network": "GitHub",
+        "username": "ImDevinC",
+        "url": "https://github.com/ImDevinC"
+      },
+      {
+        "network": "LinkedIn",
+        "username": "ImDevinC",
+        "url": "https://linkedin.com/in/imdevinc/"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Skillz",
+      "location": "Los Angeles, CA",
+      "description": "Skillz is an industry leading mobile platform that provides competitive matchmaking experiences.",
+      "position": "Lead Software Engineer",
+      "url": "https://skillz.com",
+      "startDate": "2021-10-08",
+      "summary": "Skillz is an industry leading mobile platform that provides competitive matchmaking experiences.",
+      "highlights": [
+        "Created a cluster of Android based emulator devices running in Kubernetes that helped with onboarding of new customers by priving a more seamless gameplay experience",
+        "Created internal software designed to translate GRPC and HTTP requests into Android Device (ADB) commands"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Kaplan University",
+      "url": "https://www.kaplan.edu/",
+      "area": "Computer Science",
+      "studyType": "Associates",
+      "startDate": "2016-11-01",
+      "endDate": "2018-11-01"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Software Development",
+      "level": "Master",
+      "keywords": [
+        "HTML",
+        "CSS",
+        "Javascript",
+        "Golang",
+        "Typescript"
+      ]
+    },
+    {
+      "name": "Infrastructure Management",
+      "level": "Master",
+      "keywords": [
+        "Jenkins",
+        "GitHub Actions",
+        "Terraform",
+        "AWS"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Hangry",
+      "description": "WebApp to help teams easily decide on a place to eat",
+      "keywords": [
+        "FourSquare",
+        "Bootstrap",
+        "Javascript"
+      ],
+      "startDate": "2016-08-24",
+      "endDate": "2020-08-24",
+      "type": "WebApp"
+    },
+    {
+      "name": "MyTLC",
+      "description": "Mobile application that supported 175k+ active users and allowed them to view and sync their daily work schedule to their mobile devices",
+      "keywords": [
+        "iOS",
+        "Android"
+      ],
+      "startDate": "2014",
+      "endDate": "2018",
+      "type": "Mobile Application"
+    }
+  ],
+  "meta": {
+    "canonical": "https://raw.githubusercontent.com/jsonresume/resume-schema/master/resume.json",
+    "version": "v1.0.0",
+    "lastModified": "2017-12-24T15:53:00"
+  }
+}

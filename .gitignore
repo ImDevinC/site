@@ -16,3 +16,7 @@ analyticstracking.php
 public/
 
 .terraform
+node_modules/
+package-lock.json
+package.json
+resume.html
