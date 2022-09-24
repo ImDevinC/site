@@ -9,15 +9,43 @@ on:
     - "static/**"
     
 jobs:
-  publish:
+  resume:
     runs-on: ubuntu-latest
-    name: Generate static assets
+    name: Update resume
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+      - name: Generate resume
+        id: generate
+        uses: docker/build-push-action@v2
         with:
-          submodules: recursive
+          push: false
+          tags: latest
+          file: Dockerfile.resume
+      - name: Copy resume
+        id: copy
+        uses: shrink/actions-docker-extract@v1
+        with:
+          image: ${{ steps.generate.outputs.digest }}
+          path: /usr/src/app/resume.html
+      - name: Upload to S3
+        uses: shallwefootball/s3-upload-action@master
+        with:
+          aws_key_id: ${{ secrets.AWS_KEY_ID }}
+          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws_bucket: imdevinc-site
+          source_dir: ${{ steps.copy.outputs.destination }}
+          destination_dir: ''
 
+  publish:
+    if: ${{ always() }}
+    needs: [ resume ]
+    runs-on: ubuntu-latest
+    name: Upload to S3
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      
       - name: Upload to S3
         uses: shallwefootball/s3-upload-action@master
         with:
