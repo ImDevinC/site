@@ -16,7 +16,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: Generate resume
-        id: generate
+        id: build
         uses: docker/build-push-action@v2
         with:
           push: false
@@ -24,7 +24,7 @@ jobs:
           file: Dockerfile.resume
       - name: Generate resume
         id: generate
-        run: docker run -v $PWD/static:/usr/src/app ${{ steps.generate.outputs.digest }} export resume.html --theme jsonresume-theme-rocketspacer
+        run: docker run -v $PWD/static:/usr/src/app ${{ steps.build.outputs.digest }} export resume.html --theme jsonresume-theme-rocketspacer
 
   publish:
     if: ${{ always() }}
