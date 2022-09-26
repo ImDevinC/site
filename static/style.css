@@ -56,6 +56,9 @@ body {
   background-color: #26273b;
   padding: 10px;
   border-radius: 10%;
+  margin: 0 5px;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 .contact-wrapper {
@@ -63,11 +66,6 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center; 
-}
-
-.contact {
-  margin: 0 5px;
-  margin-top: 10px;
 }
 
 .contact > a {
