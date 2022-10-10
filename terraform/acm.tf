@@ -3,13 +3,11 @@ resource "aws_acm_certificate" "public" {
   validation_method = "DNS"
   subject_alternative_names = [
     "*.imdevinc.com"
-  ] 
-  tags = {
-    created = "2022-10-10-11-44"
-  }
+  ]
   lifecycle {
     create_before_destroy = true
   }
+  provider = aws.useast1
 }
 
 resource "aws_acm_certificate_validation" "public" {
