@@ -36,7 +36,7 @@ jobs:
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
     - name: Terraform apply
-      if: github.ref == 'refs/head/main'
+      if: ${{ github.ref == 'refs/heads/main' }}
       working-directory: terraform
       run: terraform apply -auto-approve
       env:
