@@ -1,3 +1,16 @@
+resource "aws_acm_certificate" "public" {
+  domain_name = "imdevinc.com"
+  validation_method = "DNS"
+  lifecycle {
+    create_before_destroy = true
+  }
+}
+
+resource "aws_acm_certificate_validation" "public" {
+  certificate_arn = aws_acm_certificate.public.arn
+  validation_record_fqdns = [module.records.route53_record_fqdn]
+}
+
 resource "aws_acm_certificate" "main" {
   private_key       = data.aws_kms_secrets.acm.plaintext["acm_priv_key"]
   certificate_body  = data.aws_kms_secrets.acm.plaintext["acm_cert"]

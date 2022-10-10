@@ -9,6 +9,7 @@ module "zones" {
 module "records" {
   source    = "terraform-aws-modules/route53/aws//modules/records"
   zone_name = local.domain_name
+
   records = [
     {
       name = ""
