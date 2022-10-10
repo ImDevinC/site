@@ -8,19 +8,24 @@ module "zones" {
 
 locals {
   records = [
-    for dvo in aws_acm_certificate.public.domain_validation_options: {
-      name = dvo.resource_record_name
-      record = dvo.resource_record_value
-      type = dvo.resource_record_type
+    for dvo in aws_acm_certificate.public.domain_validation_options : {
+      name    = dvo.resource_record_name
+      records = [dvo.resource_record_value]
+      type    = dvo.resource_record_type
     }
   ]
 }
+
+# output "records" {
+#   value = { for rs in local.records : try(rs.key, join(" ", compact(["${rs.name} ${rs.type}", try(rs.set_identifier, "")]))) => rs }
+# }
 
 module "records" {
   source    = "terraform-aws-modules/route53/aws//modules/records"
   zone_name = local.domain_name
 
-  records = concat([local.records], [
+  # records = concat([local.records], [
+  records = [
     {
       name = ""
       type = "A"
@@ -28,6 +33,13 @@ module "records" {
         name    = module.cloudfront.cloudfront_distribution_domain_name
         zone_id = module.cloudfront.cloudfront_distribution_hosted_zone_id
       }
+    },
+    {
+      name               = local.records[0].name
+      records            = local.records[0].records
+      type               = local.records[0].type
+      full_name_override = true
+      ttl                = 300
     },
     {
       name    = "www"
@@ -53,7 +65,7 @@ module "records" {
       ]
       ttl = 1800
     }
-  ])
+  ]
 
   depends_on = [module.zones]
 }
