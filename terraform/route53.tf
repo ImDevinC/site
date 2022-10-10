@@ -20,7 +20,7 @@ module "records" {
   source    = "terraform-aws-modules/route53/aws//modules/records"
   zone_name = local.domain_name
 
-  records = concat(local.records, [
+  records = concat([], [
     {
       name = ""
       type = "A"
@@ -55,7 +55,7 @@ module "records" {
     }
   ])
 
-  depends_on = [module.zones, aws_acm_certificate.public]
+  depends_on = [module.zones]
 }
 
 module "records_molly" {
