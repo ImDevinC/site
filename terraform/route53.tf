@@ -7,8 +7,15 @@ module "zones" {
 }
 
 locals {
-  records = [
+  imdevinc_records = [
     for dvo in aws_acm_certificate.public.domain_validation_options : {
+      name    = dvo.resource_record_name
+      records = [dvo.resource_record_value]
+      type    = dvo.resource_record_type
+    }
+  ]
+  molly_records = [
+    for dvo in aws_acm_certificate.molly.domain_validation_options : {
       name    = dvo.resource_record_name
       records = [dvo.resource_record_value]
       type    = dvo.resource_record_type
@@ -16,15 +23,10 @@ locals {
   ]
 }
 
-# output "records" {
-#   value = { for rs in local.records : try(rs.key, join(" ", compact(["${rs.name} ${rs.type}", try(rs.set_identifier, "")]))) => rs }
-# }
-
 module "records" {
   source    = "terraform-aws-modules/route53/aws//modules/records"
   zone_name = local.domain_name
 
-  # records = concat([local.records], [
   records = [
     {
       name = ""
@@ -35,9 +37,9 @@ module "records" {
       }
     },
     {
-      name               = local.records[0].name
-      records            = local.records[0].records
-      type               = local.records[0].type
+      name               = local.imdevinc_records[0].name
+      records            = local.imdevinc_records[0].records
+      type               = local.imdevinc_records[0].type
       full_name_override = true
       ttl                = 300
     },
@@ -81,19 +83,17 @@ module "records_molly" {
       ttl     = 3600
     },
     {
+      name               = local.molly_records[0].name
+      records            = local.molly_records[0].records
+      type               = local.molly_records[0].type
+      full_name_override = true
+      ttl                = 300
+    },
+    {
       name    = "google-site-verification"
       type    = "TXT"
       records = [local.molly_site_verification]
       ttl     = 3600
-    },
-    {
-      name = "_acme-challenge"
-      type = "TXT"
-      records = [
-        local.molly_dns_validation_1,
-        local.molly_dns_validation_2
-      ]
-      ttl = 3600
     },
     {
       name = ""

@@ -41,8 +41,8 @@ module "cloudfront" {
       response_page_path = "/404.html"
     }
   }
-  # viewer_certificate = {
-  #   acm_certificate_arn = aws_acm_certificate.public.arn
-  #   ssl_support_method  = "sni-only"
-  # }
+  viewer_certificate = {
+    acm_certificate_arn = aws_acm_certificate.public.arn
+    ssl_support_method  = "sni-only"
+  }
 }
