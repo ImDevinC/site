@@ -11,7 +11,7 @@ locals {
     for dvo in aws_acm_certificate.public.domain_validation_options: {
       name = dvo.resource_record_name
       record = dvo.resource_record_value
-      tpye = dvo.resource_record_type
+      type = dvo.resource_record_type
     }
   ]
 }
