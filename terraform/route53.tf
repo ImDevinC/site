@@ -6,11 +6,21 @@ module "zones" {
   }
 }
 
+locals {
+  records = [
+    for dvo in aws_acm_certificate.public.domain_validation_options: {
+      name = dvo.resource_record_name
+      record = dvo.resource_record_value
+      tpye = dvo.resource_record_type
+    }
+  ]
+}
+
 module "records" {
   source    = "terraform-aws-modules/route53/aws//modules/records"
   zone_name = local.domain_name
 
-  records = [
+  records = concat(local.records, [
     {
       name = ""
       type = "A"
@@ -23,12 +33,6 @@ module "records" {
       name    = "www"
       type    = "CNAME"
       records = [local.domain_name]
-      ttl     = 3600
-    },
-    {
-      name    = "_acme-challenge"
-      type    = "TXT"
-      records = [local.dns_validation]
       ttl     = 3600
     },
     {
@@ -49,7 +53,7 @@ module "records" {
       ]
       ttl = 1800
     }
-  ]
+  ])
 
   depends_on = [module.zones]
 }
