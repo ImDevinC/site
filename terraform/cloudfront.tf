@@ -1,6 +1,6 @@
 module "cloudfront" {
   depends_on = [
-    aws_acm_certificate.public.arn
+    aws_acm_certificate.public
   ]
   source = "terraform-aws-modules/cloudfront/aws"
   aliases = [
