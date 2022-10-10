@@ -28,12 +28,6 @@ module "cloudfront" {
     cached_methods         = ["GET", "HEAD"]
     compress               = true
     query_string           = false
-
-    function_association = {
-      viewer-request = {
-        function_arn = aws_cloudfront_function.redirect.arn
-      }
-    }
   }
   custom_error_response = {
     404 = {
@@ -47,22 +41,8 @@ module "cloudfront" {
       response_page_path = "/404.html"
     }
   }
-  viewer_certificate = {
-    acm_certificate_arn = aws_acm_certificate.public.arn
-    ssl_support_method  = "sni-only"
-  }
-}
-
-resource "aws_cloudfront_function" "redirect" {
-  name    = "redirect-site-to-index-1"
-  runtime = "cloudfront-js-1.0"
-  code    = <<EOF
-function handler(event) {
-  var request = event.request;
-  if (request.uri.endsWith("/")) {
-    request.uri += "index.html";
-  }
-  return request;
-}
-  EOF
+  # viewer_certificate = {
+  #   acm_certificate_arn = aws_acm_certificate.public.arn
+  #   ssl_support_method  = "sni-only"
+  # }
 }

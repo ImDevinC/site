@@ -20,7 +20,7 @@ module "records" {
   source    = "terraform-aws-modules/route53/aws//modules/records"
   zone_name = local.domain_name
 
-  records = concat([], [
+  records = concat([local.records], [
     {
       name = ""
       type = "A"
