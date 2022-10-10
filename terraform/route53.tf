@@ -55,7 +55,7 @@ module "records" {
     }
   ])
 
-  depends_on = [module.zones]
+  depends_on = [module.zones, aws_acm_certificate.public]
 }
 
 module "records_molly" {
