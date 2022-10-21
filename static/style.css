@@ -5,7 +5,8 @@
   --shadow-color: #c1c1c1;
   --button-color: #26273b;
   --hover-text-color: #aaaaaa;
-  --text-color: #fff;
+  --text-color: #26273b;
+  --alt-text-color: #fff;
 }
 
 * {
@@ -80,7 +81,8 @@ body {
 }
 
 .contact>a {
-  color: var(--text-color);
+  text-decoration: none;
+  color: var(--alt-text-color);
 }
 
 .contact>a:hover {
@@ -110,5 +112,6 @@ body {
     --button-color: #26273b;
     --hover-text-color: #aaaaaa;
     --text-color: #fff;
+    --alt-text-color: #fff;
   }
 }
