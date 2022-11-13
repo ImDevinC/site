@@ -1,17 +1,40 @@
 module "bucket" {
   source = "terraform-aws-modules/s3-bucket/aws"
   bucket = local.bucket_name
-  # acl    = "private"
+  server_side_encryption_configuration = {
+    rule = {
+      apply_server_side_encryption_by_default = {
+        kms_master_key_id = module.kms_key.key_id
+        sse_algorithm     = "aws:kms"
+      }
+    }
+  }
 }
 
 data "aws_iam_policy_document" "s3_policy" {
   statement {
     actions   = ["s3:GetObject"]
     resources = ["${module.bucket.s3_bucket_arn}/*"]
+    effect    = "Allow"
 
     principals {
       type        = "AWS"
       identifiers = module.cloudfront.cloudfront_origin_access_identity_iam_arns
+    }
+  }
+
+  statement {
+    actions   = ["s3:*"]
+    resources = ["${module.bucket.s3_bucket_arn}", "${module.bucket.s3_bucket_arn}/*"]
+    effect    = "Deny"
+    condition {
+      test     = "Bool"
+      variable = "aws:SecureTransport"
+      values   = [false]
+    }
+    principals {
+      type        = "*"
+      identifiers = ["*"]
     }
   }
 }
