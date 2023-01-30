@@ -50,6 +50,14 @@ module "records" {
       ttl     = 3600
     },
     {
+      name = "blog"
+      type = "A"
+      alias = {
+        name    = module.blog_cloudfront.cloudfront_distribution_domain_name
+        zone_id = module.blog_cloudfront.cloudfront_distribution_hosted_zone_id
+      }
+    },
+    {
       name    = ""
       type    = "TXT"
       records = [local.keybase_validation]
