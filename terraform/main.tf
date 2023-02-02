@@ -9,8 +9,9 @@ provider "aws" {
 
 terraform {
   backend "s3" {
-    bucket = "imdevinc-tf-storage"
-    region = "us-west-1"
-    key    = "site"
+    bucket         = "imdevinc-tf-storage"
+    region         = "us-west-1"
+    key            = "site"
+    dynamodb_table = "terraform-state-lock"
   }
 }
