@@ -11,7 +11,7 @@ module "cloudfront" {
   create_origin_access_identity = true
   default_root_object           = "index.html"
   origin_access_identities = {
-    imdevinc_site_bucket = "site CF to site S3"
+    imdevinc_site_bucket = "cf to s3"
   }
   origin = {
     imdevinc_site_bucket = {
@@ -29,18 +29,18 @@ module "cloudfront" {
     compress               = true
     query_string           = false
   }
-  custom_error_response = {
-    404 = {
+  custom_error_response = [
+    {
       error_code         = 404
       response_code      = 404
       response_page_path = "/404.html"
-    }
-    403 = {
+    },
+    {
       error_code         = 403
       response_code      = 404
       response_page_path = "/404.html"
     }
-  }
+  ]
   viewer_certificate = {
     acm_certificate_arn = aws_acm_certificate.public.arn
     ssl_support_method  = "sni-only"
@@ -80,9 +80,36 @@ module "blog_cloudfront" {
     cached_methods         = ["GET", "HEAD"]
     compress               = true
     query_string           = true
+    function_association = {
+      viewer-request = {
+        function_arn = aws_cloudfront_function.rewrite_hugo.arn
+      }
+    }
   }
   viewer_certificate = {
     acm_certificate_arn = aws_acm_certificate.public.arn
     ssl_support_method  = "sni-only"
   }
+}
+
+resource "aws_cloudfront_function" "rewrite_hugo" {
+  name    = "rewrite-hugo-index"
+  runtime = "cloudfront-js-1.0"
+  code    = <<EOF
+  function handler(event) {
+    var request = event.request;
+    var uri = request.uri;
+    
+    // Check whether the URI is missing a file name.
+    if (uri.endsWith('/')) {
+        request.uri += 'index.html';
+    } 
+    // Check whether the URI is missing a file extension.
+    else if (!uri.includes('.')) {
+        request.uri += '/index.html';
+    }
+
+    return request;
+  }
+  EOF
 }
