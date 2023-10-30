@@ -35,16 +35,63 @@
   },
   "work": [
     {
+      "name": "JupiterOne",
+      "location": "Raleigh, NC",
+      "description": "JupiterOne is a cyber asset management and governance solution built for security, operations, and compliance teams.",
+      "position": "Senior Site Reliability  Engineer",
+      "url": "https://jupiterone.com",
+      "startDate": "2021-10-08",
+      "endDate": "2022-11-01",
+      "summary": "JupiterOne is a cyber asset management and governance solution built for security, operations, and compliance teams.",
+      "highlights": [
+        "Helped with the rollout and adoption of Kubernetes clusters to simplify deploy process for multiple internal applications.",
+        "Led the rollout process for migration to a new observablity stack going from a mix of self-hosted and AWS CloudWatch to NewRelic, which allowed teams to have significantly better insight into their applications and services, reducing overall MTTR allowing us to define a baseline MTTD.",
+        "Assisted engineers across the organization with the adoption of a new CI/CD pipeline that allowed for faster and more reliable deployments.",
+        "Helped define standards for new services and applications to ensure they were built with observability and testing in mind."
+      ]
+    },
+    {
       "name": "Skillz",
       "location": "Los Angeles, CA",
       "description": "Skillz is an industry leading mobile platform that provides competitive matchmaking experiences.",
       "position": "Lead Software Engineer",
       "url": "https://skillz.com",
       "startDate": "2021-10-08",
+      "endDate": "2022-11-01",
       "summary": "Skillz is an industry leading mobile platform that provides competitive matchmaking experiences.",
       "highlights": [
         "Created a cluster of Android based emulator devices running in Kubernetes that helped with onboarding of new customers by priving a more seamless gameplay experience",
         "Created internal software designed to translate GRPC and HTTP requests into Android Device (ADB) commands"
+      ]
+    },
+    {
+      "name": "Malwarebytes",
+      "location": "Santa Clara, CA",
+      "description": "Malwarebytes is a leading provider of anti-malware software solutions to consumers and businesses alike.",
+      "position": "Principal Site Reliability Engineer",
+      "url": "https://malwarebytes.com",
+      "startDate": "2016-10-08",
+      "endDate": "2021-10-08",
+      "summary": "Malwarebytes is a leading provider of anti-malware software solutions to consumers and businesses alike.",
+      "highlights": [
+        "Designed scaleable systems for use by all engineering teams to improve CI/CD process and improve deployment speed and reliability",
+        "Created infrastructure to standardize monitoring utilities amongst multiple network stacks and provide a streamlined incident response process",
+        "Worked with internal and external users to diagnose points of contention with current processes and create better solutions to drive efficiency"
+      ]
+    },
+    {
+      "name": "Best Buy/Geek Squad",
+      "location": "Minneapolos, MN",
+      "description": "Geek Squad is an arm of Best Buy that provides technical support and installation services to consumers and businesses alike.",
+      "position": "Software Engineer",
+      "url": "https://malwarebytes.com",
+      "startDate": "2007-11-22",
+      "endDate": "2016-09-25",
+      "summary": "Geek Squad is an arm of Best Buy that provides technical support and installation services to consumers and businesses alike.",
+      "highlights": [
+        "Built internal toolset for Geek Squad Agents to help standardize and optimize the process of removing viruses and cleaning up computers",
+        "Collected feedback from thousands of employees across the organization to help drive the development of new tools and processes to improve the customer experience",
+        "Worked with vendors, such as Microsoft, to keep up to date on the newest technologies and help drive adoption of new technologies across the organization"
       ]
     }
   ],
@@ -74,10 +121,19 @@
       "name": "Infrastructure Management",
       "level": "Master",
       "keywords": [
+        "Terraform",
+        "AWS",
+        "Kubernetes",
+        "Observability"
+      ]
+    },
+    {
+      "name": "CI/CD",
+      "level": "Master",
+      "keywords": [
         "Jenkins",
         "GitHub Actions",
-        "Terraform",
-        "AWS"
+        "ArgoCD"
       ]
     }
   ],
