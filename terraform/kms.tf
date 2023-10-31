@@ -34,7 +34,10 @@ data "aws_iam_policy_document" "kms_key_policy" {
     condition {
       test     = "StringEquals"
       variable = "AWS:SourceArn"
-      values   = [module.blog_cloudfront.cloudfront_distribution_arn]
+      values = [
+        module.blog_cloudfront.cloudfront_distribution_arn,
+        module.cloudfront.cloudfront_distribution_arn,
+      ]
     }
   }
 }

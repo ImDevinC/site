@@ -1,7 +1,8 @@
 // Site bucket
 module "bucket" {
-  source = "terraform-aws-modules/s3-bucket/aws"
-  bucket = local.bucket_name
+  source  = "terraform-aws-modules/s3-bucket/aws"
+  version = "3.15.1"
+  bucket  = local.bucket_name
   server_side_encryption_configuration = {
     rule = {
       apply_server_side_encryption_by_default = {
@@ -36,8 +37,9 @@ resource "aws_s3_bucket_policy" "bucket_policy" {
 
 // Blog bucket
 module "blog_bucket" {
-  source = "terraform-aws-modules/s3-bucket/aws"
-  bucket = local.blog_bucket_name
+  source  = "terraform-aws-modules/s3-bucket/aws"
+  version = "3.15.1"
+  bucket  = local.blog_bucket_name
   server_side_encryption_configuration = {
     rule = {
       apply_server_side_encryption_by_default = {
