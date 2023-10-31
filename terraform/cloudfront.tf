@@ -2,23 +2,27 @@ module "cloudfront" {
   depends_on = [
     aws_acm_certificate.public
   ]
-  source = "terraform-aws-modules/cloudfront/aws"
+  source  = "terraform-aws-modules/cloudfront/aws"
+  version = "3.2.1"
   aliases = [
     local.domain_name,
     "www.${local.domain_name}"
   ]
-  price_class                   = "PriceClass_100"
-  create_origin_access_identity = true
-  default_root_object           = "index.html"
-  origin_access_identities = {
-    imdevinc_site_bucket = "cf to s3"
+  price_class                  = "PriceClass_100"
+  default_root_object          = "index.html"
+  create_origin_access_control = true
+  origin_access_control = {
+    site_oac = {
+      description      = "Cloudfront access to S3"
+      origin_type      = "s3"
+      signing_behavior = "always"
+      signing_protocol = "sigv4"
+    }
   }
   origin = {
     imdevinc_site_bucket = {
-      domain_name = module.bucket.s3_bucket_bucket_regional_domain_name
-      s3_origin_config = {
-        origin_access_identity = "imdevinc_site_bucket"
-      }
+      domain_name           = module.bucket.s3_bucket_bucket_regional_domain_name
+      origin_access_control = "site_oac"
     }
   }
   default_cache_behavior = {
@@ -52,7 +56,8 @@ module "blog_cloudfront" {
   depends_on = [
     aws_acm_certificate.public
   ]
-  source = "terraform-aws-modules/cloudfront/aws"
+  source  = "terraform-aws-modules/cloudfront/aws"
+  version = "3.2.1"
   aliases = [
     "blog.${local.domain_name}"
   ]

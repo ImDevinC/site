@@ -14,28 +14,17 @@ module "bucket" {
 
 data "aws_iam_policy_document" "s3_policy" {
   statement {
+    effect = "Allow"
+    principals {
+      identifiers = ["cloudfront.amazonaws.com"]
+      type        = "Service"
+    }
     actions   = ["s3:GetObject"]
-    resources = ["${module.bucket.s3_bucket_arn}/*"]
-    effect    = "Allow"
-
-    principals {
-      type        = "AWS"
-      identifiers = module.cloudfront.cloudfront_origin_access_identity_iam_arns
-    }
-  }
-
-  statement {
-    actions   = ["s3:*"]
-    resources = ["${module.bucket.s3_bucket_arn}", "${module.bucket.s3_bucket_arn}/*"]
-    effect    = "Deny"
+    resources = ["arn:aws:s3:::${module.bucket.s3_bucket_id}/*"]
     condition {
-      test     = "Bool"
-      variable = "aws:SecureTransport"
-      values   = [false]
-    }
-    principals {
-      type        = "*"
-      identifiers = ["*"]
+      test     = "StringEquals"
+      variable = "AWS:SourceArn"
+      values   = [module.cloudfront.cloudfront_distribution_arn]
     }
   }
 }
