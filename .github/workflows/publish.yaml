@@ -26,10 +26,12 @@ jobs:
         id: generate
         run: docker run -v $PWD/static:/usr/src/app ${{ steps.build.outputs.digest }} export resume.html --theme jsonresume-theme-rocketspacer
       - name: Upload to S3
-        uses: shallwefootball/s3-upload-action@master
+        uses: jakejarvis/s3-sync-action@master
         with:
-          aws_key_id: ${{ secrets.AWS_KEY_ID }}
-          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws_bucket: imdevinc-site
-          source_dir: static
-          destination_dir: ''
+          args: --acl public-read --follow-symlinks --delete
+        env:
+          AWS_S3_BUCKET: imdevinc-site
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY:  ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: 'us-west-2'
+          SOURCE_DIR: ./static
