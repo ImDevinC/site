@@ -3,14 +3,6 @@ module "bucket" {
   source  = "terraform-aws-modules/s3-bucket/aws"
   version = "3.15.1"
   bucket  = local.bucket_name
-  server_side_encryption_configuration = {
-    rule = {
-      apply_server_side_encryption_by_default = {
-        kms_master_key_id = module.kms_key.key_id
-        sse_algorithm     = "aws:kms"
-      }
-    }
-  }
 }
 
 data "aws_iam_policy_document" "s3_policy" {
@@ -40,14 +32,6 @@ module "blog_bucket" {
   source  = "terraform-aws-modules/s3-bucket/aws"
   version = "3.15.1"
   bucket  = local.blog_bucket_name
-  server_side_encryption_configuration = {
-    rule = {
-      apply_server_side_encryption_by_default = {
-        kms_master_key_id = module.kms_key.key_id
-        sse_algorithm     = "aws:kms"
-      }
-    }
-  }
 }
 
 data "aws_iam_policy_document" "blog_s3_policy" {
