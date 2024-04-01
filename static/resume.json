@@ -44,7 +44,7 @@
       "summary": "JupiterOne is a cyber asset management and governance solution built for security, operations, and compliance teams.",
       "highlights": [
         "Helped with the rollout and adoption of Kubernetes clusters to simplify deploy process for multiple internal applications.",
-        "Led the rollout process for migration to a new observablity stack going from a mix of self-hosted and AWS CloudWatch to NewRelic, which allowed teams to have significantly better insight into their applications and services, reducing overall MTTR allowing us to define a baseline MTTD.",
+        "Led the rollout process for migration to a new observablity stack going from a mix of self-hosted and AWS CloudWatch to NewRelic, which allowed teams to have significantly better insight into their applications and services, reducing overall MTTR allowing us to define a baseline MTTD while also saving >$500k/year.",
         "Assisted engineers across the organization with the adoption of a new CI/CD pipeline that allowed for faster and more reliable deployments.",
         "Helped define standards for new services and applications to ensure they were built with observability and testing in mind."
       ]
