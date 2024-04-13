@@ -1,30 +1,19 @@
-terraform {
-  required_providers {
-    cloudflare = {
-      source  = "cloudflare/cloudflare"
-      version = "~> 4.0"
-    }
-  }
-}
-
-provider "cloudflare" {
-  api_token = var.cloudflare_token
-}
-
 locals {
   cloudflare_account_id = "160dde3020d94b782e2085939a53c2d6"
+  name                  = "imdevinc"
+  hostname              = "${local.name}.com"
 }
 
 resource "cloudflare_zone" "main" {
   account_id = local.cloudflare_account_id
-  zone       = "emoavenue.com"
+  zone       = local.hostname
   jump_start = true
 }
 
 resource "cloudflare_pages_project" "main" {
   depends_on        = [cloudflare_zone.main]
   account_id        = local.cloudflare_account_id
-  name              = "emoavenue"
+  name              = local.name
   production_branch = "main"
 
   build_config {
@@ -46,5 +35,28 @@ resource "cloudflare_pages_project" "main" {
 resource "cloudflare_pages_domain" "main" {
   account_id   = local.cloudflare_account_id
   project_name = cloudflare_pages_project.main.name
-  domain       = "emoavenue.com"
+  domain       = local.hostname
+}
+
+resource "cloudflare_record" "www" {
+  zone_id = cloudflare_zone.main.id
+  name    = "www"
+  value   = local.hostname
+  proxied = true
+  type    = "CNAME"
+}
+
+resource "cloudflare_record" "main" {
+  zone_id = cloudflare_zone.main.id
+  name    = local.hostname
+  value   = "${local.name}.pages.dev"
+  proxied = true
+  type    = "CNAME"
+}
+
+resource "cloudflare_record" "keybase" {
+  zone_id = cloudflare_zone.main.id
+  name    = local.hostname
+  value   = local.keybase_validation
+  type    = "TXT"
 }
