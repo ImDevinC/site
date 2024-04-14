@@ -1,5 +1,6 @@
 locals {
   cloudflare_account_id = "160dde3020d94b782e2085939a53c2d6"
+  keybase_validation    = "keybase-site-verification=fI_s0HjMznP9oeK_le26opYH3ndOpT8LLXDX7gGvOQQ"
   name                  = "imdevinc"
   hostname              = "${local.name}.com"
   mx_records = {
