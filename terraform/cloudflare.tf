@@ -2,6 +2,13 @@ locals {
   cloudflare_account_id = "160dde3020d94b782e2085939a53c2d6"
   name                  = "imdevinc"
   hostname              = "${local.name}.com"
+  mx_records = {
+    "aspmx.l.google.com"      = 1,
+    "alt1.aspmx.l.google.com" = 5,
+    "alt2.aspmx.l.google.com" = 5,
+    "alt3.aspmx.l.google.com" = 10,
+    "alt4.aspmx.l.google.com" = 10
+  }
 }
 
 resource "cloudflare_zone" "main" {
@@ -59,4 +66,14 @@ resource "cloudflare_record" "keybase" {
   name    = local.hostname
   value   = local.keybase_validation
   type    = "TXT"
+}
+
+resource "cloudflare_record" "mx" {
+  for_each = local.mx_records
+  zone_id  = cloudflare_zone.main.id
+  name     = "@"
+  value    = each.key
+  proxied  = false
+  priority = each.value
+  type     = "MX"
 }
