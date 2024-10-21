@@ -10,6 +10,14 @@ locals {
     "alt3.aspmx.l.google.com" = 10,
     "alt4.aspmx.l.google.com" = 10
   }
+  tunnel_domain = "52197ab3-92e1-4432-b0a4-0e0f98ad1a8b.cfargotunnel.com"
+  tunneled_domains = toset([
+    "gha-dashboard",
+    "homeassistant",
+    "obsidian-livesync",
+    "remote",
+    "wallabag"
+  ])
 }
 
 resource "cloudflare_zone" "main" {
@@ -52,6 +60,7 @@ resource "cloudflare_record" "www" {
   value   = local.hostname
   proxied = true
   type    = "CNAME"
+  comment = "managed by terraform"
 }
 
 resource "cloudflare_record" "main" {
@@ -60,6 +69,7 @@ resource "cloudflare_record" "main" {
   value   = "${local.name}.pages.dev"
   proxied = true
   type    = "CNAME"
+  comment = "managed by terraform"
 }
 
 resource "cloudflare_record" "keybase" {
@@ -67,6 +77,7 @@ resource "cloudflare_record" "keybase" {
   name    = local.hostname
   value   = local.keybase_validation
   type    = "TXT"
+  comment = "managed by terraform"
 }
 
 resource "cloudflare_record" "mx" {
@@ -77,4 +88,15 @@ resource "cloudflare_record" "mx" {
   proxied  = false
   priority = each.value
   type     = "MX"
+  comment  = "managed by terraform"
+}
+
+resource "cloudflare_record" "tunnel" {
+  for_each = local.tunneled_domains
+  zone_id  = cloudflare_zone.main.id
+  name     = each.value
+  value    = local.tunnel_domain
+  proxied  = true
+  type     = "CNAME"
+  comment  = "managed by terraform"
 }
