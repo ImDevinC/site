@@ -1,6 +1,7 @@
 locals {
   cloudflare_account_id = "160dde3020d94b782e2085939a53c2d6"
   keybase_validation    = "keybase-site-verification=fI_s0HjMznP9oeK_le26opYH3ndOpT8LLXDX7gGvOQQ"
+  atproto_validation    = "did=did:plc:fmuum4ytzifhp2qmwrurgtbe"
   name                  = "imdevinc"
   hostname              = "${local.name}.com"
   mx_records = {
@@ -16,7 +17,9 @@ locals {
     "homeassistant",
     "obsidian-livesync",
     "remote",
-    "wallabag"
+    "wallabag",
+    "bsky",
+    "*.bsky"
   ])
 }
 
@@ -75,7 +78,15 @@ resource "cloudflare_record" "main" {
 resource "cloudflare_record" "keybase" {
   zone_id = cloudflare_zone.main.id
   name    = local.hostname
-  value   = local.keybase_validation
+  value   = "\"${local.keybase_validation}\""
+  type    = "TXT"
+  comment = "managed by terraform"
+}
+
+resource "cloudflare_record" "atproto" {
+  zone_id = cloudflare_zone.main.id
+  name    = "_atproto"
+  value   = "\"${local.atproto_validation}\""
   type    = "TXT"
   comment = "managed by terraform"
 }
