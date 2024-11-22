@@ -18,8 +18,6 @@ locals {
     "obsidian-livesync",
     "remote",
     "wallabag",
-    "bsky",
-    "*.bsky"
   ])
 }
 
@@ -37,8 +35,8 @@ resource "cloudflare_pages_project" "main" {
 
   build_config {
     build_caching   = false
-    build_command   = "exit 0"
-    destination_dir = "static"
+    build_command   = "hugo --minify"
+    destination_dir = "public"
   }
 
   source {
@@ -46,7 +44,7 @@ resource "cloudflare_pages_project" "main" {
     config {
       owner             = "ImDevinC"
       production_branch = "main"
-      repo_name         = "site"
+      repo_name         = "blog"
     }
   }
 }
