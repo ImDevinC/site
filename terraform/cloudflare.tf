@@ -18,7 +18,6 @@ locals {
     "obsidian-livesync",
     #    "remote",
     "wallabag",
-    "snips"
   ])
 }
 
