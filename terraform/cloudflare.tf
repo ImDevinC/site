@@ -16,8 +16,8 @@ locals {
     "gha-dashboard",
     "homeassistant",
     "obsidian-livesync",
-    #    "remote",
     "wallabag",
+    "auth"
   ])
 }
 
