@@ -1,7 +1,3 @@
-provider "aws" {
-  region = "us-west-2"
-}
-
 terraform {
   backend "s3" {
     bucket         = "imdevinc-tf-storage"
@@ -17,8 +13,17 @@ terraform {
       source  = "cloudflare/cloudflare"
       version = "~> 4.0"
     }
+
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 5.0"
+    }
   }
 }
 
 provider "cloudflare" {}
+
+provider "aws" {
+  region = "us-west-1"
+}
 
