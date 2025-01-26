@@ -17,6 +17,7 @@ locals {
     "homeassistant",
     "obsidian-livesync",
     "wallabag",
+    "dnd-proxy",
     "auth"
   ])
 }
