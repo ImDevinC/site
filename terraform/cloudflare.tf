@@ -18,7 +18,8 @@ locals {
     "obsidian-livesync",
     "wallabag",
     "dnd-proxy",
-    "auth"
+    "auth",
+    "lego"
   ])
 }
 
