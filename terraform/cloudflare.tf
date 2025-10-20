@@ -19,7 +19,9 @@ locals {
     "wallabag",
     "dnd-proxy",
     "auth",
-    "lego"
+    "lego",
+    "files",
+    "umami",
   ])
 }
 
