@@ -22,7 +22,6 @@ locals {
     "lego",
     "files",
     "umami",
-    "wakapi"
   ])
 }
 
