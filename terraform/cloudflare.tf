@@ -22,6 +22,7 @@ locals {
     "lego",
     "files",
     "umami",
+    "couchdb",
   ])
 }
 
