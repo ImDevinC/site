@@ -23,6 +23,7 @@ locals {
     "files",
     "umami",
     "couchdb",
+    "macrotrack",
   ])
 }
 
