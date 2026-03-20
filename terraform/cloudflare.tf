@@ -24,6 +24,7 @@ locals {
     "umami",
     "couchdb",
     "macrotrack",
+    "chat",
   ])
 }
 
