@@ -116,3 +116,27 @@ resource "cloudflare_record" "tunnel" {
   type     = "CNAME"
   comment  = "managed by terraform"
 }
+
+resource "cloudflare_record" "spf" {
+  zone_id = cloudflare_zone.main.id
+  name    = "@"
+  value   = "v=spf1 include:_spf.google.com -all"
+  type    = "TXT"
+  comment = "managed by terraform"
+}
+
+resource "cloudflare_record" "dkim" {
+  zone_id = cloudflare_zone.main.id
+  name    = "google._domainkey"
+  value   = "v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApeKeZkIvnWjQRBH816hDEsiDq32g0NggeGHXW0zJBB467s3f6rYvy3e4f08aLBir7UqIH4JtMYtkkN9rvUtxvCRq74aFE0VBiShasbUuQEDbDzwKEybVdHNt+1K23foaOWHkKLbMfHLaGVY+4Zf1VGqGEh0eCZLz2yzruEZpet7QEMLGptmc5p2xjMhPQg/+skp78Uo2RIG8jK3kRReFbZx+ERFJ/PV01+8o2oGqMqfQ/vW1f0qFtGlupRp+m3m3k8qfmkuJFyuMAESrjX+44xspH9tCHTU/LjyVMepKrkGQi9Q2+m29F9btoYjZPUNTyZw4EmXJlBQsiE6yO4k5XwIDAQAB"
+  type    = "TXT"
+  comment = "managed by terraform"
+}
+
+resource "cloudflare_record" "dmarc" {
+  zone_id = cloudflare_zone.main.id
+  name    = "_dmarc"
+  value   = "v=DMARC1; p=none; rua=mailto:dmarc-reports@imdevinc.com"
+  type    = "TXT"
+  comment = "managed by terraform"
+}
