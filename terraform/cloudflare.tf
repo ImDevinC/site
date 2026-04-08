@@ -13,18 +13,13 @@ locals {
   }
   tunnel_domain = "52197ab3-92e1-4432-b0a4-0e0f98ad1a8b.cfargotunnel.com"
   tunneled_domains = toset([
-    "gha-dashboard",
     "homeassistant",
-    "obsidian-livesync",
     "wallabag",
-    "dnd-proxy",
-    "auth",
     "lego",
-    "files",
     "umami",
-    "couchdb",
     "macrotrack",
     "chat",
+    "minions"
   ])
 }
 
