@@ -19,7 +19,8 @@ locals {
     "umami",
     "macrotrack",
     "chat",
-    "minions"
+    "minions",
+    "couchdb"
   ])
 }
 
