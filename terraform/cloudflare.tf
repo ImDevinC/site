@@ -25,9 +25,10 @@ locals {
 }
 
 resource "cloudflare_zone" "main" {
-  account_id = local.cloudflare_account_id
-  zone       = local.hostname
-  jump_start = true
+  name = local.hostname
+  account = {
+    id = local.cloudflare_account_id
+  }
 }
 
 resource "cloudflare_pages_project" "main" {
@@ -36,18 +37,26 @@ resource "cloudflare_pages_project" "main" {
   name              = local.name
   production_branch = "main"
 
-  build_config {
+
+  build_config = {
     build_caching   = false
     build_command   = "hugo --minify"
     destination_dir = "public"
   }
-
-  source {
+  source = {
     type = "github"
-    config {
+    config = {
       owner             = "ImDevinC"
       production_branch = "main"
       repo_name         = "blog"
+    }
+  }
+  deployment_configs = {
+    preview = {
+      fail_open = false
+    }
+    production = {
+      fail_open = false
     }
   }
 }
@@ -55,44 +64,77 @@ resource "cloudflare_pages_project" "main" {
 resource "cloudflare_pages_domain" "main" {
   account_id   = local.cloudflare_account_id
   project_name = cloudflare_pages_project.main.name
-  domain       = local.hostname
+  name         = local.hostname
 }
 
-resource "cloudflare_record" "www" {
+
+
+
+
+
+
+
+
+
+resource "cloudflare_dns_record" "www" {
   zone_id = cloudflare_zone.main.id
   name    = "www"
   content = local.hostname
   proxied = true
   type    = "CNAME"
   comment = "managed by terraform"
+  ttl     = 1
 }
 
-resource "cloudflare_record" "main" {
+moved {
+  from = cloudflare_record.www
+  to   = cloudflare_dns_record.www
+}
+
+resource "cloudflare_dns_record" "main" {
   zone_id = cloudflare_zone.main.id
   name    = local.hostname
   content = "${local.name}.pages.dev"
   proxied = true
   type    = "CNAME"
   comment = "managed by terraform"
+  ttl     = 1
 }
 
-resource "cloudflare_record" "keybase" {
+moved {
+  from = cloudflare_record.main
+  to   = cloudflare_dns_record.main
+}
+
+resource "cloudflare_dns_record" "keybase" {
   zone_id = cloudflare_zone.main.id
   name    = local.hostname
   content = "\"${local.keybase_validation}\""
   type    = "TXT"
   comment = "managed by terraform"
+  ttl     = 1
 }
 
-resource "cloudflare_record" "atproto" {
+moved {
+  from = cloudflare_record.keybase
+  to   = cloudflare_dns_record.keybase
+}
+
+resource "cloudflare_dns_record" "atproto" {
   zone_id = cloudflare_zone.main.id
   name    = "_atproto"
   content = "\"${local.atproto_validation}\""
   type    = "TXT"
   comment = "managed by terraform"
+  ttl     = 1
 }
 
-resource "cloudflare_record" "mx" {
+moved {
+  from = cloudflare_record.atproto
+  to   = cloudflare_dns_record.atproto
+}
+
+resource "cloudflare_dns_record" "mx" {
   for_each = local.mx_records
   zone_id  = cloudflare_zone.main.id
   name     = "@"
@@ -101,9 +143,15 @@ resource "cloudflare_record" "mx" {
   priority = each.value
   type     = "MX"
   comment  = "managed by terraform"
+  ttl      = 1
 }
 
-resource "cloudflare_record" "tunnel" {
+moved {
+  from = cloudflare_record.mx
+  to   = cloudflare_dns_record.mx
+}
+
+resource "cloudflare_dns_record" "tunnel" {
   for_each = local.tunneled_domains
   zone_id  = cloudflare_zone.main.id
   name     = each.value
@@ -111,28 +159,52 @@ resource "cloudflare_record" "tunnel" {
   proxied  = true
   type     = "CNAME"
   comment  = "managed by terraform"
+  ttl      = 1
 }
 
-resource "cloudflare_record" "spf" {
+moved {
+  from = cloudflare_record.tunnel
+  to   = cloudflare_dns_record.tunnel
+}
+
+resource "cloudflare_dns_record" "spf" {
   zone_id = cloudflare_zone.main.id
   name    = "@"
   content = "v=spf1 include:_spf.google.com -all"
   type    = "TXT"
   comment = "managed by terraform"
+  ttl     = 1
 }
 
-resource "cloudflare_record" "dkim" {
+moved {
+  from = cloudflare_record.spf
+  to   = cloudflare_dns_record.spf
+}
+
+resource "cloudflare_dns_record" "dkim" {
   zone_id = cloudflare_zone.main.id
   name    = "google._domainkey"
   content = "v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApeKeZkIvnWjQRBH816hDEsiDq32g0NggeGHXW0zJBB467s3f6rYvy3e4f08aLBir7UqIH4JtMYtkkN9rvUtxvCRq74aFE0VBiShasbUuQEDbDzwKEybVdHNt+1K23foaOWHkKLbMfHLaGVY+4Zf1VGqGEh0eCZLz2yzruEZpet7QEMLGptmc5p2xjMhPQg/+skp78Uo2RIG8jK3kRReFbZx+ERFJ/PV01+8o2oGqMqfQ/vW1f0qFtGlupRp+m3m3k8qfmkuJFyuMAESrjX+44xspH9tCHTU/LjyVMepKrkGQi9Q2+m29F9btoYjZPUNTyZw4EmXJlBQsiE6yO4k5XwIDAQAB"
   type    = "TXT"
   comment = "managed by terraform"
+  ttl     = 1
 }
 
-resource "cloudflare_record" "dmarc" {
+moved {
+  from = cloudflare_record.dkim
+  to   = cloudflare_dns_record.dkim
+}
+
+resource "cloudflare_dns_record" "dmarc" {
   zone_id = cloudflare_zone.main.id
   name    = "_dmarc"
   content = "v=DMARC1; p=none; rua=mailto:dmarc-reports@imdevinc.com"
   type    = "TXT"
   comment = "managed by terraform"
+  ttl     = 1
+}
+
+moved {
+  from = cloudflare_record.dmarc
+  to   = cloudflare_dns_record.dmarc
 }
