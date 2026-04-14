@@ -86,11 +86,6 @@ resource "cloudflare_dns_record" "www" {
   ttl     = 1
 }
 
-moved {
-  from = cloudflare_record.www
-  to   = cloudflare_dns_record.www
-}
-
 resource "cloudflare_dns_record" "main" {
   zone_id = cloudflare_zone.main.id
   name    = local.hostname
@@ -99,11 +94,6 @@ resource "cloudflare_dns_record" "main" {
   type    = "CNAME"
   comment = "managed by terraform"
   ttl     = 1
-}
-
-moved {
-  from = cloudflare_record.main
-  to   = cloudflare_dns_record.main
 }
 
 resource "cloudflare_dns_record" "keybase" {
@@ -115,11 +105,6 @@ resource "cloudflare_dns_record" "keybase" {
   ttl     = 1
 }
 
-moved {
-  from = cloudflare_record.keybase
-  to   = cloudflare_dns_record.keybase
-}
-
 resource "cloudflare_dns_record" "atproto" {
   zone_id = cloudflare_zone.main.id
   name    = "_atproto"
@@ -127,11 +112,6 @@ resource "cloudflare_dns_record" "atproto" {
   type    = "TXT"
   comment = "managed by terraform"
   ttl     = 1
-}
-
-moved {
-  from = cloudflare_record.atproto
-  to   = cloudflare_dns_record.atproto
 }
 
 resource "cloudflare_dns_record" "mx" {
@@ -146,11 +126,6 @@ resource "cloudflare_dns_record" "mx" {
   ttl      = 1
 }
 
-moved {
-  from = cloudflare_record.mx
-  to   = cloudflare_dns_record.mx
-}
-
 resource "cloudflare_dns_record" "tunnel" {
   for_each = local.tunneled_domains
   zone_id  = cloudflare_zone.main.id
@@ -162,11 +137,6 @@ resource "cloudflare_dns_record" "tunnel" {
   ttl      = 1
 }
 
-moved {
-  from = cloudflare_record.tunnel
-  to   = cloudflare_dns_record.tunnel
-}
-
 resource "cloudflare_dns_record" "spf" {
   zone_id = cloudflare_zone.main.id
   name    = "@"
@@ -174,11 +144,6 @@ resource "cloudflare_dns_record" "spf" {
   type    = "TXT"
   comment = "managed by terraform"
   ttl     = 1
-}
-
-moved {
-  from = cloudflare_record.spf
-  to   = cloudflare_dns_record.spf
 }
 
 resource "cloudflare_dns_record" "dkim" {
@@ -190,11 +155,6 @@ resource "cloudflare_dns_record" "dkim" {
   ttl     = 1
 }
 
-moved {
-  from = cloudflare_record.dkim
-  to   = cloudflare_dns_record.dkim
-}
-
 resource "cloudflare_dns_record" "dmarc" {
   zone_id = cloudflare_zone.main.id
   name    = "_dmarc"
@@ -202,9 +162,4 @@ resource "cloudflare_dns_record" "dmarc" {
   type    = "TXT"
   comment = "managed by terraform"
   ttl     = 1
-}
-
-moved {
-  from = cloudflare_record.dmarc
-  to   = cloudflare_dns_record.dmarc
 }
