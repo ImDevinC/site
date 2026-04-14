@@ -20,7 +20,8 @@ locals {
     "macrotrack",
     "chat",
     "minions",
-    "couchdb"
+    "couchdb",
+    "files"
   ])
 }
 
