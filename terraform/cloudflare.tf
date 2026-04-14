@@ -61,7 +61,7 @@ resource "cloudflare_pages_domain" "main" {
 resource "cloudflare_record" "www" {
   zone_id = cloudflare_zone.main.id
   name    = "www"
-  value   = local.hostname
+  content = local.hostname
   proxied = true
   type    = "CNAME"
   comment = "managed by terraform"
@@ -70,7 +70,7 @@ resource "cloudflare_record" "www" {
 resource "cloudflare_record" "main" {
   zone_id = cloudflare_zone.main.id
   name    = local.hostname
-  value   = "${local.name}.pages.dev"
+  content = "${local.name}.pages.dev"
   proxied = true
   type    = "CNAME"
   comment = "managed by terraform"
@@ -79,7 +79,7 @@ resource "cloudflare_record" "main" {
 resource "cloudflare_record" "keybase" {
   zone_id = cloudflare_zone.main.id
   name    = local.hostname
-  value   = "\"${local.keybase_validation}\""
+  content = "\"${local.keybase_validation}\""
   type    = "TXT"
   comment = "managed by terraform"
 }
@@ -87,7 +87,7 @@ resource "cloudflare_record" "keybase" {
 resource "cloudflare_record" "atproto" {
   zone_id = cloudflare_zone.main.id
   name    = "_atproto"
-  value   = "\"${local.atproto_validation}\""
+  content = "\"${local.atproto_validation}\""
   type    = "TXT"
   comment = "managed by terraform"
 }
@@ -96,7 +96,7 @@ resource "cloudflare_record" "mx" {
   for_each = local.mx_records
   zone_id  = cloudflare_zone.main.id
   name     = "@"
-  value    = each.key
+  content  = each.key
   proxied  = false
   priority = each.value
   type     = "MX"
@@ -107,7 +107,7 @@ resource "cloudflare_record" "tunnel" {
   for_each = local.tunneled_domains
   zone_id  = cloudflare_zone.main.id
   name     = each.value
-  value    = local.tunnel_domain
+  content  = local.tunnel_domain
   proxied  = true
   type     = "CNAME"
   comment  = "managed by terraform"
@@ -116,7 +116,7 @@ resource "cloudflare_record" "tunnel" {
 resource "cloudflare_record" "spf" {
   zone_id = cloudflare_zone.main.id
   name    = "@"
-  value   = "v=spf1 include:_spf.google.com -all"
+  content = "v=spf1 include:_spf.google.com -all"
   type    = "TXT"
   comment = "managed by terraform"
 }
@@ -124,7 +124,7 @@ resource "cloudflare_record" "spf" {
 resource "cloudflare_record" "dkim" {
   zone_id = cloudflare_zone.main.id
   name    = "google._domainkey"
-  value   = "v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApeKeZkIvnWjQRBH816hDEsiDq32g0NggeGHXW0zJBB467s3f6rYvy3e4f08aLBir7UqIH4JtMYtkkN9rvUtxvCRq74aFE0VBiShasbUuQEDbDzwKEybVdHNt+1K23foaOWHkKLbMfHLaGVY+4Zf1VGqGEh0eCZLz2yzruEZpet7QEMLGptmc5p2xjMhPQg/+skp78Uo2RIG8jK3kRReFbZx+ERFJ/PV01+8o2oGqMqfQ/vW1f0qFtGlupRp+m3m3k8qfmkuJFyuMAESrjX+44xspH9tCHTU/LjyVMepKrkGQi9Q2+m29F9btoYjZPUNTyZw4EmXJlBQsiE6yO4k5XwIDAQAB"
+  content = "v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApeKeZkIvnWjQRBH816hDEsiDq32g0NggeGHXW0zJBB467s3f6rYvy3e4f08aLBir7UqIH4JtMYtkkN9rvUtxvCRq74aFE0VBiShasbUuQEDbDzwKEybVdHNt+1K23foaOWHkKLbMfHLaGVY+4Zf1VGqGEh0eCZLz2yzruEZpet7QEMLGptmc5p2xjMhPQg/+skp78Uo2RIG8jK3kRReFbZx+ERFJ/PV01+8o2oGqMqfQ/vW1f0qFtGlupRp+m3m3k8qfmkuJFyuMAESrjX+44xspH9tCHTU/LjyVMepKrkGQi9Q2+m29F9btoYjZPUNTyZw4EmXJlBQsiE6yO4k5XwIDAQAB"
   type    = "TXT"
   comment = "managed by terraform"
 }
@@ -132,7 +132,7 @@ resource "cloudflare_record" "dkim" {
 resource "cloudflare_record" "dmarc" {
   zone_id = cloudflare_zone.main.id
   name    = "_dmarc"
-  value   = "v=DMARC1; p=none; rua=mailto:dmarc-reports@imdevinc.com"
+  content = "v=DMARC1; p=none; rua=mailto:dmarc-reports@imdevinc.com"
   type    = "TXT"
   comment = "managed by terraform"
 }
