@@ -163,3 +163,16 @@ resource "cloudflare_dns_record" "dmarc" {
   comment = "managed by terraform"
   ttl     = 1
 }
+
+resource "cloudflare_r2_bucket" "files" {
+  account_id = local.cloudflare_account_id
+  name       = "files"
+  location   = "WNAM"
+}
+resource "cloudflare_r2_custom_domain" "files" {
+  account_id  = local.cloudflare_account_id
+  bucket_name = cloudflare_r2_bucket.files.name
+  zone_id     = cloudflare_zone.main.id
+  domain      = "files.${local.hostname}"
+  enabled     = true
+}
