@@ -15,13 +15,11 @@ locals {
   tunneled_domains = toset([
     "homeassistant",
     "wallabag",
-    "lego",
     "umami",
     "macrotrack",
     "chat",
     "minions",
-    "couchdb",
-    "files"
+    "couchdb"
   ])
 }
 
