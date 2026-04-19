@@ -26,7 +26,7 @@ resource "cloudflare_pages_project" "mythicforge" {
     type = "github"
     config = {
       owner                         = "ImDevinC"
-      repo_name                     = "spellcards"
+      repo_name                     = "mythic-forge"
       production_branch             = "main"
       pr_comments_enabled           = true
       production_deployment_enabled = true
