@@ -18,7 +18,7 @@ resource "cloudflare_pages_project" "mythicforge" {
   production_branch = "main"
 
   build_config = {
-    build_command   = "npm run build"
+    build_command   = "npm ci --include=dev && npm run build"
     destination_dir = "dist"
   }
 
